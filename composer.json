@@ -1,0 +1,45 @@
+{
+    "name": "pianzhou/monolog",
+    "description": "This is monolog package extension",
+    "keywords": ["log", "logging", "psr-3"],
+    "homepage": "https://github.com/pianzhou2021/monolog",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pian Zhou",
+            "email": "pianzhou2021@163.com",
+            "homepage": "https://seld.be"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "monolog/monolog": "^2.0"
+    },
+    "require-dev": {
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": {"Monolog\\": "src/Monolog"}
+    },
+    "autoload-dev": {
+    },
+    "provide": {
+        "psr/log-implementation": "1.0.0 || 2.0.0 || 3.0.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "2.x-dev"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "phpstan": "vendor/bin/phpstan analyse"
+    },
+    "config": {
+        "lock": false,
+        "sort-packages": true,
+        "platform-check": false
+    }
+}
