@@ -21,7 +21,7 @@
     "suggest": {
     },
     "autoload": {
-        "psr-4": {"Pianzhou\\": "src/Monolog"}
+        "psr-4": {"Pianzhou\\Monolog\\": "src/"}
     },
     "autoload-dev": {
     },
