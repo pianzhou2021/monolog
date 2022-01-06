@@ -30,7 +30,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "master"
+            "dev-main": "dev-master"
         }
     },
     "scripts": {
