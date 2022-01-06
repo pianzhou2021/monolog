@@ -3,7 +3,7 @@
 /*
  * This file is part of the Monolog package.
  *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
+ * (c) Pian Zhou <pianzhou2021@163.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -17,7 +17,7 @@ use Monolog\Formatter\ScalarFormatter;
  * Formats data into an associative array of scalar values.
  * Objects and arrays will be JSON encoded.
  *
- * @author Andrew Lawson <adlawson@gmail.com>
+ * @author Pian Zhou <pianzhou2021@163.com>
  */
 class TransformScalarFormatter extends ScalarFormatter
 {

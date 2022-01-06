@@ -3,7 +3,7 @@
 /*
  * This file is part of the Monolog package.
  *
- * (c) Jordi Boggiano <j.boggiano@seld.be>
+ * (c) Pian Zhou <pianzhou2021@163.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,9 @@ namespace Pianzhou\Monolog\Processor;
 use Monolog\Processor\ProcessorInterface;
 
 /**
- * Adds a unique identifier into records
+ * 将Post内容，格式化转换后添加到extra中
  *
- * @author Simon Mönch <sm@webfactory.de>
+ * @author Pian Zhou <pianzhou2021@163.com>
  */
 class PostProcessor implements ProcessorInterface
 {

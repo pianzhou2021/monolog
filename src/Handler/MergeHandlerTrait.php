@@ -1,6 +1,19 @@
 <?php
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Pian Zhou <pianzhou2021@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Pianzhou\Monolog\Handler;
 
+/**
+ * 当使用合并输出的时候，将日志合并后一次性输出
+ * 
+ * @author Pian Zhou <pianzhou2021@163.com>
+ */
 trait MergeHandlerTrait
 {
     /**
@@ -36,6 +49,8 @@ trait MergeHandlerTrait
     }
 
     /**
+     * 批量处理日志
+     * 
      * {@inheritDoc}
      */
     public function handleBatch(array $records): void
