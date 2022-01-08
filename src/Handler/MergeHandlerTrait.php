@@ -1,5 +1,12 @@
 <?php
 /*
+ * @Description: 合并输出Handler
+ * @Author: (c) Pian Zhou <pianzhou2021@163.com>
+ * @Date: 2022-01-05 21:21:47
+ * @LastEditors: Pian Zhou
+ * @LastEditTime: 2022-01-08 15:47:42
+ */
+/*
  * This file is part of the Monolog package.
  *
  * (c) Pian Zhou <pianzhou2021@163.com>
@@ -34,9 +41,11 @@ trait MergeHandlerTrait
 
     /**
      * 格式化内容
-     * 
+     *
+     * @param array $record
+     * @return array
      */
-    protected function format(array $record)
+    protected function format(array $record) : array
     {
         if ($this->processors) {
             /** @var Record $record */
@@ -55,24 +64,33 @@ trait MergeHandlerTrait
      */
     public function handleBatch(array $records): void
     {
-        $formatted  = '';
-        $datetime   = '';
-
-        foreach ($records as $record) {
+        foreach ($records as $key => $record) {
             if (!$this->isHandling($record)) {
+                unset($records[$key]);
                 continue;
             }
 
-            $record = $this->format($record);
-
-            $formatted    .= $record['formatted'];
-            $datetime   = $record['datetime'];
+            $record[$key] = $this->format($record);
         }
 
-        if (!$formatted) {
+        if (empty($records)) {
             return;
         }
 
-        $this->write(compact('formatted', 'datetime'));
+        $this->batchWrite($records);
+    }
+
+    /**
+     * 批量写入
+     *
+     * @param array $records 有效记录
+     * @return void
+     */
+    protected function batchWrite(array $records)
+    {
+        $formatted  = implode('', array_column($records, 'formatted'));
+        $datetime   = reset($records)['datetime'];
+
+        return $this->write(compact('formatted', 'datetime'));
     }
 }
