@@ -4,7 +4,7 @@
  * @Author: (c) Pian Zhou <pianzhou2021@163.com>
  * @Date: 2022-01-05 21:21:47
  * @LastEditors: Pian Zhou
- * @LastEditTime: 2022-01-08 13:55:55
+ * @LastEditTime: 2022-01-08 18:00:41
  */
 namespace Pianzhou\Monolog\Formatter;
 
@@ -63,7 +63,7 @@ class TransformScalarFormatter extends ScalarFormatter
      * @param string $default 默认值
      * @return mixed
      */
-    protected function value(array $array, string $key, string $default = '') : mixed
+    protected function value(array $array, string $key, string $default = '')
     {
         if (strpos($key, '.') === false) {
             return $array[$key] ?? $default;
