@@ -4,7 +4,7 @@
  * @Author: (c) Pian Zhou <pianzhou2021@163.com>
  * @Date: 2022-01-05 21:21:47
  * @LastEditors: Pian Zhou
- * @LastEditTime: 2022-01-08 15:47:42
+ * @LastEditTime: 2022-01-08 20:01:21
  */
 /*
  * This file is part of the Monolog package.
@@ -70,7 +70,7 @@ trait MergeHandlerTrait
                 continue;
             }
 
-            $record[$key] = $this->format($record);
+            $records[$key] = $this->format($record);
         }
 
         if (empty($records)) {

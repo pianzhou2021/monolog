@@ -12,9 +12,11 @@
 namespace Pianzhou\Monolog\Handler;
 
 use Illuminate\Database\ConnectionInterface;
+use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
 use PDO;
+use Pianzhou\Monolog\Formatter\TransformScalarFormatter;
 use Pianzhou\Monolog\Handler\MergeHandlerTrait;
 
 /**
@@ -113,5 +115,16 @@ class DatabaseHandler extends AbstractProcessingHandler
         }
         
         return $statement->execute();
+    }
+
+
+    /**
+     * Gets the default formatter.
+     *
+     * Overwrite this if the LineFormatter is not a good default for your handler.
+     */
+    protected function getDefaultFormatter(): FormatterInterface
+    {
+        return new TransformScalarFormatter();
     }
 }
